@@ -25,6 +25,11 @@ func TestDefaultTimeToUnixAndBackAgain(t *testing.T) {
 	decodedDefaultTime := time.Unix(encodedDefaultTime, 0)
 
 	if defaultTime != decodedDefaultTime {
-		t.Errorf("expected: %v, got %v", defaultTime, decodedDefaultTime)
+		t.Errorf("val:expected: %v, got %v", defaultTime, decodedDefaultTime)
 	}
+
+	if defaultTime.Unix() != decodedDefaultTime.Unix() {
+		t.Errorf("Unix():expected: %v, got %v", defaultTime.Unix(), decodedDefaultTime.Unix())
+	}
+
 }
