@@ -15,6 +15,10 @@ func TestDefaultTimeToUnixNanoAndBackAgain(t *testing.T) {
 	if defaultTime != decodedDefaultTime {
 		t.Errorf("expected: %v, got %v", defaultTime, decodedDefaultTime)
 	}
+
+	if defaultTime.UnixNano() != decodedDefaultTime.UnixNano() {
+		t.Errorf("UnixNano():expected: %v, got %v", defaultTime.Unix(), decodedDefaultTime.Unix())
+	}
 }
 
 func TestDefaultTimeToUnixAndBackAgain(t *testing.T) {
